@@ -1,8 +1,10 @@
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default function App() {
   return (
     <>
-      <h1 className="header">Kalkulator walutowy</h1>
+      <Header title="Kalkulator walutowy" />
       <div className="container">
         <form className="form">
           <p>
@@ -28,7 +30,7 @@ export default function App() {
           </p>
         </form>
       </div>
-      <footer className="footer">Wszelkie prawa zastrzeżone Ireneusz Miernik 2023</footer>
+      <Footer date="2024" />
     </>
   );
 }

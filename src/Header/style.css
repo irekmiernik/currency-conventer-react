@@ -1,0 +1,12 @@
+.header {
+    color: #3c06c5;
+    background-color: #e8e3f4;
+    max-width: 400px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: 700;
+    box-shadow: 1px 1px 1px black;
+    text-shadow: 1px -1px 6px #5664FF;
+}
