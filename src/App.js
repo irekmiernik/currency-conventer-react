@@ -1,35 +1,13 @@
 import Header from "./Header";
 import Footer from "./Footer";
+import Container from "./Container";
+import Form from "./Form";
 
 export default function App() {
   return (
     <>
       <Header title="Kalkulator walutowy" />
-      <div className="container">
-        <form className="form">
-          <p>
-            <label className="form__label"> Podaj kwotę wybranej waluty:
-              <input className="js-inputAmount" type="number" step="0.01" min="0.01" required
-                placeholder="Twoja wartość" autoFocus />
-              <select className="js-inputCurrency"></select>
-              <strong className="form__label form__labelEqual"> = </strong>
-              <input className="js-outputAmount" type="number" readOnly placeholder="Obliczona wartość" />
-              <select className="js-outputCurrency"></select>
-            </label>
-          </p>
-          <p>
-            <strong className="form__label form__labelRates js-labelUpdateExchangeRates">
-              Pokaż kursy walut
-            </strong>
-            <strong className="form__label form__labelRates js-labelInputExchangeRates" hidden>
-              Ukryj kursy walut:
-            </strong>
-            <input className="js-inputExchangeRate" type="number" step="0.0001" min="0.0001" required hidden
-              placeholder="Podaj kurs" />
-            <select className="js-inputExchangeRateCurrency" hidden></select>
-          </p>
-        </form>
-      </div>
+      <Container body={<Form />} />
       <Footer date="2024" />
     </>
   );
