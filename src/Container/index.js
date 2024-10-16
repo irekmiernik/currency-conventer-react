@@ -1,8 +1,8 @@
 import "./style.css";
 
-const Container = ({ body }) => (
+const Container = ({ children }) => (
   <div className="container">
-    {body}
+    {children}
   </div>
 );
 export default Container;

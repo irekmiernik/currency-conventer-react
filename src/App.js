@@ -24,13 +24,15 @@ export default function App() {
   return (
     <>
       <Header title="Kalkulator walutowy" />
-      {showRates
-        ? <Container body={<Form curriencies={<Curriencies tableRates={tableRates} />}
-          body={<Rates curriencies={< Curriencies tableRates={tableRates} />} toggleShowRates={toggleShowRates} />} />} />
+      <Container>
+        {showRates
+          ? <Form curriencies={<Curriencies tableRates={tableRates} />}
+            body={<Rates curriencies={<Curriencies tableRates={tableRates} />} toggleShowRates={toggleShowRates} />} />
 
-        : <Container body={<Form curriencies={<Curriencies tableRates={tableRates} />}
-          body={<Label toggleShowRates={toggleShowRates} />} />} />
-      }
+          : <Form curriencies={<Curriencies tableRates={tableRates} />}
+            body={<Label toggleShowRates={toggleShowRates} />} />
+        }
+      </Container>
       <Footer date="2024" />
     </>
   );
