@@ -1,6 +1,6 @@
 # Currency conventer
  ## Demo
- https://irekmiernik.github.io/currency-conventer/
+ https://irekmiernik.github.io/currency-conventer-react/
  
  ## Specification
  Here is the main screen of this conventer:
