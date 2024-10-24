@@ -23,3 +23,27 @@
   text-decoration: underline;
   color: #f50808;
 }
+
+.form__labelRates:hover {
+  background-color: aqua;
+}
+
+.form__button {
+  color: #fff;
+  background-color: hsl(180, 100%, 30%);
+  border-style: none;
+  margin: 10px;
+  padding: 6px;
+  transition: 1s;
+}
+
+.form__button:hover {
+  background-color: hsl(180, 100%, 40%);
+  transform: scale(1.1);
+}
+
+.form__button:disabled {
+  color: #aaa;
+  background-color: #fff;
+  border-style: solid;
+}

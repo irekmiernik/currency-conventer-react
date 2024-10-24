@@ -1,11 +1,11 @@
-const Curriencies = ({ tableRates }) => (
-  <select>
-    {tableRates.map(rate => (
+const Curriencies = ({ ratesTable }) => (
+  <>
+    {ratesTable.map(rate => (
       <option key={rate.id}>
         {rate.curriency}
       </option>
     ))}
-  </select>
+  </>
 );
 
 export default Curriencies;
