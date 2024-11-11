@@ -1,7 +1,5 @@
-import "./style.css";
-
 const Container = ({ children }) => (
-  <div className="container">
+  <div>
     {children}
   </div>
 );

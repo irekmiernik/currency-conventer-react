@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "./Container/Header";
+import Footer from "./Container/Footer";
 import Container from "./Container";
-import Calculator from "./Calculator";
-import Curriencies from "./Curriencies";
-import Rates from "./Rates";
+import Calculator from "./Container/Calculator";
+import Curriencies from "./Container/Curriencies";
+import Rates from "./Container/Rates";
 
 const initialRatesTable = [
   { id: 0, curriency: "---", rate: 0.00 },
@@ -37,18 +37,16 @@ export default function App() {
   };
 
   return (
-    <>
+    <Container>
       <Header title="Kalkulator walutowy" />
-      <Container>
-        {screen
-          ? <Rates curriencies={<Curriencies ratesTable={ratesTable} />} toggleScreen={toggleScreen}
-            getRateTable={getRateTable} saveRate={saveRate} />
+      {screen
+        ? <Rates curriencies={<Curriencies ratesTable={ratesTable} />} toggleScreen={toggleScreen}
+          getRateTable={getRateTable} saveRate={saveRate} />
 
-          : <Calculator curriencies={<Curriencies ratesTable={ratesTable} />} toggleScreen={toggleScreen}
-            getRateTable={getRateTable} />
-        }
-      </Container>
+        : <Calculator curriencies={<Curriencies ratesTable={ratesTable} />} toggleScreen={toggleScreen}
+          getRateTable={getRateTable} />
+      }
       <Footer date="2024" />
-    </>
+    </Container>
   );
 }
