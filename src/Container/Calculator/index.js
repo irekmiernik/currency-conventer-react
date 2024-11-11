@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./style.css";
 
 const Calculator = ({ curriencies, toggleScreen, getRateTable }) => {
 
