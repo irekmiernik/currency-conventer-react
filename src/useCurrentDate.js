@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import "./style.css";
 
-const Timer = () => {
+export const useCurrentDate = () => {
 
   const [date, setDate] = useState(new Date());
 
@@ -22,7 +21,5 @@ const Timer = () => {
     return () => clearInterval(id);
   }, []);
 
-  return <p className="timer">{dateFormat.format(date)}</p>
+  return <p className="currentDate">{dateFormat.format(date)}</p>
 };
-
-export default Timer;
