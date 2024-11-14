@@ -2,10 +2,9 @@ body {
   font-family: 'Lato', sans-serif;
   line-height: 1.5;
   font-size: 15px;
-  max-height: 1000px;
+  margin: 10% auto;
   background-image: url("./images/background.png");
   background-size: 100px;
   background-repeat: repeat;
   background-position: center;
-  margin: 150px auto;
 }

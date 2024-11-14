@@ -20,7 +20,7 @@ const Calculator = ({ curriencies, toggleScreen, getRateTable }) => {
     <>
       <form className="form" onSubmit={onOblicz}>
         <p className="form__label">
-          Podaj kwotę wybranej waluty: <input
+          <input
             value={inValue}
             onChange={({ target }) => setInValue(target.value)}
             type="number" step="0.01" min="0.01"
@@ -54,17 +54,23 @@ const Calculator = ({ curriencies, toggleScreen, getRateTable }) => {
           </select>
         </p>
         <p>
-          Kursy walut można zobaczyć/zmienić <strong
+          <button
+            className="form__button"
+            disabled={inCurrency === "" || outCurrency === ""
+              || inCurrency === "---" || outCurrency === "---"}
+          >
+            Przelicz
+          </button>
+        </p>
+        <p>
+          <strong
             className="form__label form__labelRates"
             onClick={toggleScreen}
-          > tutaj</strong></p>
-        <p><button
-          className="form__button"
-          disabled={inCurrency === "" || outCurrency === ""
-            || inCurrency === "---" || outCurrency === "---"}
-        >
-          Przelicz
-        </button></p>
+          >
+            Aktualizacja kursów walut
+          </strong>
+        </p>
+
       </form >
     </>
   )

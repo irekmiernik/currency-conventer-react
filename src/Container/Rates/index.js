@@ -19,7 +19,7 @@ const Rates = ({ curriencies, toggleScreen, getRateTable, saveRate }) => {
   return (
     <form className="form" onSubmit={onClick}>
       <p>
-        Podaj nowy kurs wybranej waluty: <input
+        <input
           value={rate}
           onChange={({ target }) => {
             setShowRate(false);
@@ -43,19 +43,23 @@ const Rates = ({ curriencies, toggleScreen, getRateTable, saveRate }) => {
         </select>
       </p>
       <p>
-        Powrót do kalkulacji <strong
-          className="form__label form__labelRates"
-          onClick={toggleScreen}> tutaj</strong>
+        <button
+          className="form__button"
+          disabled={currency === "" || currency === "---" || currency === "PLN"}
+        >
+          {showRate
+            ? "Pokaż kurs"
+            : "Zapisz kurs"}
+        </button>
       </p>
-
-      <p><button
-        className="form__button"
-        disabled={currency === "" || currency === "---" || currency === "PLN"}
-      >
-        {showRate
-          ? "Pokaż kurs"
-          : "Zapisz kurs"}
-      </button></p>
+      <p>
+        <strong
+          className="form__label form__labelRates"
+          onClick={toggleScreen}
+        >
+          Powrót do kalkulacji
+        </strong>
+      </p>
     </form>
   )
 };
