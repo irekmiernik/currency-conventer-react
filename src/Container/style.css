@@ -4,13 +4,6 @@
   border-radius: 5%;
 }
 
-.currentDate {
-  text-align: right;
-  font-family: monospace;
-  color: darkgray;
-  margin: 0;
-}
-
 .form {
   margin: 0 auto;
   background-color: #fff;

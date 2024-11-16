@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useCurrentDate } from "./useCurrentDate";
 import Header from "./Container/Header";
 import Footer from "./Container/Footer";
 import Container from "./Container";
 import Calculator from "./Container/Calculator";
 import Curriencies from "./Container/Curriencies";
 import Rates from "./Container/Rates";
+import Timer from "./Container/Timer";
 
 const initialRatesTable = [
   { id: 0, curriency: "---", rate: 0.00 },
@@ -39,7 +39,7 @@ export default function App() {
 
   return (
     <Container>
-      {useCurrentDate()}
+      <Timer />
       <Header title="Kalkulator walutowy" />
       {screen
         ? <Rates curriencies={<Curriencies ratesTable={ratesTable} />} toggleScreen={toggleScreen}
