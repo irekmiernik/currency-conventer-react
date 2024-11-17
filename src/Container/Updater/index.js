@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Rates = ({ curriencies, toggleScreen, objectRates }) => {
+const Updater = ({ curriencies, toggleScreen, objectRates }) => {
 
   const [currency, setCurrency] = useState("");
   const [rate, setRate] = useState("");
@@ -64,4 +64,4 @@ const Rates = ({ curriencies, toggleScreen, objectRates }) => {
   )
 };
 
-export default Rates;
+export default Updater;
