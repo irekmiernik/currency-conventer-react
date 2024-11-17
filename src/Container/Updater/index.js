@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Curriencies from "../../Curriencies";
 
-const Updater = ({ toggleScreen, objectRates }) => {
+const Updater = ({ toggleSwitcher, objectRates }) => {
 
   const [currency, setCurrency] = useState("");
   const [rate, setRate] = useState("");
@@ -56,7 +56,7 @@ const Updater = ({ toggleScreen, objectRates }) => {
       <p>
         <strong
           className="form__label form__labelRates"
-          onClick={toggleScreen}
+          onClick={toggleSwitcher}
         >
           Powrót do kalkulacji
         </strong>

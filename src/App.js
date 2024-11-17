@@ -18,8 +18,8 @@ const initialRatesTable = [
 
 export default function App() {
 
-  const [screen, setScreen] = useState(false);
-  const toggleScreen = () => setScreen(screen => !screen);
+  const [switcher, setSwitcher] = useState(true);
+  const toggleSwitcher = () => setSwitcher(switcher => !switcher);
 
   const objectRates = useRates({ initialRatesTable });
 
@@ -27,10 +27,8 @@ export default function App() {
     <Container>
       <Dater />
       <Header title="Kalkulator walutowy" />
-      {screen
-        ? <Updater toggleScreen={toggleScreen} objectRates={objectRates} />
-        : <Calculator toggleScreen={toggleScreen} objectRates={objectRates} />
-      }
+      {switcher && <Calculator toggleSwitcher={toggleSwitcher} objectRates={objectRates} />}
+      {!switcher && <Updater toggleSwitcher={toggleSwitcher} objectRates={objectRates} />}
       <Footer date="2024" />
     </Container>
   );

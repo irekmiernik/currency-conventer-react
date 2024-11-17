@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Curriencies from "../../Curriencies";
 
-const Calculator = ({ toggleScreen, objectRates }) => {
+const Calculator = ({ toggleSwitcher, objectRates }) => {
 
   const [inValue, setInValue] = useState("");
   const [outValue, setOutValue] = useState("");
@@ -66,7 +66,7 @@ const Calculator = ({ toggleScreen, objectRates }) => {
         <p>
           <strong
             className="form__label form__labelRates"
-            onClick={toggleScreen}
+            onClick={toggleSwitcher}
           >
             Aktualizacja kursów walut
           </strong>
