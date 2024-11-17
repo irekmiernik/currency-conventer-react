@@ -3,7 +3,6 @@ import Header from "./Container/Header";
 import Footer from "./Container/Footer";
 import Container from "./Container";
 import Calculator from "./Container/Calculator";
-import Curriencies from "./Curriencies";
 import Updater from "./Container/Updater";
 import Dater from "./Container/Dater";
 import { useRates } from "./useRates";
@@ -29,10 +28,8 @@ export default function App() {
       <Dater />
       <Header title="Kalkulator walutowy" />
       {screen
-        ? <Updater curriencies={<Curriencies objectRates={objectRates} />} toggleScreen={toggleScreen}
-          objectRates={objectRates} />
-        : <Calculator curriencies={<Curriencies objectRates={objectRates} />} toggleScreen={toggleScreen}
-          objectRates={objectRates} />
+        ? <Updater toggleScreen={toggleScreen} objectRates={objectRates} />
+        : <Calculator toggleScreen={toggleScreen} objectRates={objectRates} />
       }
       <Footer date="2024" />
     </Container>

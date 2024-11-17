@@ -1,6 +1,7 @@
 import { useState } from "react";
+import Curriencies from "../../Curriencies";
 
-const Calculator = ({ curriencies, toggleScreen, objectRates }) => {
+const Calculator = ({ toggleScreen, objectRates }) => {
 
   const [inValue, setInValue] = useState("");
   const [outValue, setOutValue] = useState("");
@@ -34,7 +35,7 @@ const Calculator = ({ curriencies, toggleScreen, objectRates }) => {
               setInCurrency(target.value)
             }}
           >
-            {curriencies}
+            <Curriencies objectRates={objectRates} />
           </select>
           <strong className="form__label form__labelEqual"> = </strong>
           <input
@@ -50,7 +51,7 @@ const Calculator = ({ curriencies, toggleScreen, objectRates }) => {
               setOutCurrency(target.value)
             }}
           >
-            {curriencies}
+            <Curriencies objectRates={objectRates} />
           </select>
         </p>
         <p>

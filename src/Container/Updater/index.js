@@ -1,6 +1,7 @@
 import { useState } from "react";
+import Curriencies from "../../Curriencies";
 
-const Updater = ({ curriencies, toggleScreen, objectRates }) => {
+const Updater = ({ toggleScreen, objectRates }) => {
 
   const [currency, setCurrency] = useState("");
   const [rate, setRate] = useState("");
@@ -39,7 +40,7 @@ const Updater = ({ curriencies, toggleScreen, objectRates }) => {
             setCurrency(target.value)
           }}
         >
-          {curriencies}
+          <Curriencies objectRates={objectRates} />
         </select>
       </p>
       <p>
