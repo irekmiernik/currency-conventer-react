@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Header from "./Container/Header";
-import Footer from "./Container/Footer";
-import Container from "./Container";
-import Calculator from "./Container/Calculator";
-import Updater from "./Container/Updater";
-import Dater from "./Container/Dater";
+import { Header } from "./Container/Header";
+import { Footer } from "./Container/Footer";
+import { Container } from "./Container";
+import { Calculator } from "./Container/Calculator";
+import { Updater } from "./Container/Updater";
+import { Dater } from "./Container/Dater";
 import { useRates } from "./useRates";
 
 const initialRatesTable = [
@@ -18,18 +18,19 @@ const initialRatesTable = [
 
 export default function App() {
 
+  const rateSet = useRates({ initialRatesTable });
+
   const [switcher, setSwitcher] = useState(true);
   const toggleSwitcher = () => setSwitcher(switcher => !switcher);
-
-  const objectRates = useRates({ initialRatesTable });
 
   return (
     <Container>
       <Dater />
       <Header title="Kalkulator walutowy" />
-      {switcher && <Calculator toggleSwitcher={toggleSwitcher} objectRates={objectRates} />}
-      {!switcher && <Updater toggleSwitcher={toggleSwitcher} objectRates={objectRates} />}
+      {switcher && <Calculator rateSet={rateSet} toggleSwitcher={toggleSwitcher} />}
+      {!switcher && <Updater rateSet={rateSet} toggleSwitcher={toggleSwitcher} />}
       <Footer date="2024" />
     </Container>
   );
-}
+};
+

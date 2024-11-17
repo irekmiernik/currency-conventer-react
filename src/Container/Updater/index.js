@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Curriencies from "../../Curriencies";
 
-const Updater = ({ toggleSwitcher, objectRates }) => {
+export const Updater = ({ rateSet, toggleSwitcher }) => {
 
   const [currency, setCurrency] = useState("");
   const [rate, setRate] = useState("");
@@ -10,10 +10,10 @@ const Updater = ({ toggleSwitcher, objectRates }) => {
   const onClick = (event) => {
     event.preventDefault();
     if (showRate) {
-      setRate(objectRates.getRate(currency));
+      setRate(rateSet.getRate(currency));
     } else {
       setShowRate(true);
-      objectRates.saveRate(currency, rate);
+      rateSet.saveRate(currency, rate);
     }
   };
 
@@ -40,7 +40,7 @@ const Updater = ({ toggleSwitcher, objectRates }) => {
             setCurrency(target.value)
           }}
         >
-          <Curriencies objectRates={objectRates} />
+          <Curriencies rateSet={rateSet} />
         </select>
       </p>
       <p>
@@ -64,5 +64,3 @@ const Updater = ({ toggleSwitcher, objectRates }) => {
     </form>
   )
 };
-
-export default Updater;

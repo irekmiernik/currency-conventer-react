@@ -1,6 +1,7 @@
-const Curriencies = ({ objectRates }) => (
+
+const Curriencies = ({ rateSet }) => (
   <>
-    {objectRates.ratesTable.map(rate => (
+    {rateSet.ratesTable.map(rate => (
       <option key={rate.id}>
         {rate.curriency}
       </option>

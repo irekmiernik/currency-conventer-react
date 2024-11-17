@@ -1,6 +1,5 @@
 import './style.css';
 
-const Header = ({ title }) => (
+export const Header = ({ title }) => (
     <header className="header">{title} </header>
 );
-export default Header;

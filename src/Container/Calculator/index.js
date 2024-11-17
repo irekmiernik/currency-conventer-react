@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Curriencies from "../../Curriencies";
 
-const Calculator = ({ toggleSwitcher, objectRates }) => {
+export const Calculator = ({ rateSet, toggleSwitcher }) => {
 
   const [inValue, setInValue] = useState("");
   const [outValue, setOutValue] = useState("");
@@ -13,7 +13,7 @@ const Calculator = ({ toggleSwitcher, objectRates }) => {
 
   const onOblicz = (event) => {
     event.preventDefault();
-    let a = calculateValue(inValue, objectRates.getRate(inCurrency), objectRates.getRate(outCurrency));
+    let a = calculateValue(inValue, rateSet.getRate(inCurrency), rateSet.getRate(outCurrency));
     setOutValue(a);
   };
 
@@ -35,7 +35,7 @@ const Calculator = ({ toggleSwitcher, objectRates }) => {
               setInCurrency(target.value)
             }}
           >
-            <Curriencies objectRates={objectRates} />
+            <Curriencies rateSet={rateSet} />
           </select>
           <strong className="form__label form__labelEqual"> = </strong>
           <input
@@ -51,7 +51,7 @@ const Calculator = ({ toggleSwitcher, objectRates }) => {
               setOutCurrency(target.value)
             }}
           >
-            <Curriencies objectRates={objectRates} />
+            <Curriencies rateSet={rateSet} />
           </select>
         </p>
         <p>
@@ -76,5 +76,3 @@ const Calculator = ({ toggleSwitcher, objectRates }) => {
     </>
   )
 };
-
-export default Calculator;
