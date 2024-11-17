@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Calculator = ({ curriencies, toggleScreen, getRateTable }) => {
+const Calculator = ({ curriencies, toggleScreen, objectRates }) => {
 
   const [inValue, setInValue] = useState("");
   const [outValue, setOutValue] = useState("");
@@ -12,7 +12,7 @@ const Calculator = ({ curriencies, toggleScreen, getRateTable }) => {
 
   const onOblicz = (event) => {
     event.preventDefault();
-    let a = calculateValue(inValue, getRateTable(inCurrency), getRateTable(outCurrency));
+    let a = calculateValue(inValue, objectRates.getRate(inCurrency), objectRates.getRate(outCurrency));
     setOutValue(a);
   };
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Rates = ({ curriencies, toggleScreen, getRateTable, saveRate }) => {
+const Rates = ({ curriencies, toggleScreen, objectRates }) => {
 
   const [currency, setCurrency] = useState("");
   const [rate, setRate] = useState("");
@@ -9,10 +9,10 @@ const Rates = ({ curriencies, toggleScreen, getRateTable, saveRate }) => {
   const onClick = (event) => {
     event.preventDefault();
     if (showRate) {
-      setRate(getRateTable(currency));
+      setRate(objectRates.getRate(currency));
     } else {
       setShowRate(true);
-      saveRate(currency, rate);
+      objectRates.saveRate(currency, rate);
     }
   };
 

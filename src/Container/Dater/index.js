@@ -1,7 +1,7 @@
 import { useCurrentDate } from "../../useCurrentDate";
 import './style.css';
 
-const Timer = () => {
+const Dater = () => {
 
   const dateOptions = {
     weekday: "long",
@@ -21,7 +21,7 @@ const Timer = () => {
 
   const date = useCurrentDate();
 
-  return (<p className="timer">{dateFormat.format(date) + "r. godz. " + timeFormat.format(date)}</p>);
+  return (<p className="dater">{dateFormat.format(date) + "r. godz. " + timeFormat.format(date)}</p>);
 };
 
-export default Timer;
+export default Dater;
